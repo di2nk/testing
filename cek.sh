@@ -69,8 +69,8 @@ fi
 
 echo "-------------------------------------"
 echo " Multi Login = kill "
-echo " Cara pakai : kill [nombor PID] "
+echo " Cara pakai : kill [Nomor PID] "
 echo "-------------------------------------"
 
-echo " By AdiSubagja"
+echo -e " By \e[1;33;44m Semar \e[0m"
 echo "";
