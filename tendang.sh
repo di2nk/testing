@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script by : AdiSubagja
+# Script by : Someone, Somewhere.
 #!/bin/bash
 clear
 MAX=2
