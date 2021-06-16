@@ -16,5 +16,6 @@ Just testing
 5. chmod +x setup.sh
 
 6. sed -i -e 's/\r$//' setup.sh
+7. screen -S setup
 
-7. ./setup.sh
+8. ./setup.sh
