@@ -21,7 +21,7 @@ commonname=netterz.my.id
 email=adisubagja@netterz.my.id
 
 # simple password minimal
-wget -O /etc/pam.d/common-password "https://netzvps.herokuapp.com/vpn/password"
+wget -O /etc/pam.d/common-password "https://raw.githubusercontent.com/di2nk/testing/main/password"
 chmod +x /etc/pam.d/common-password
 
 # go to root
@@ -86,7 +86,7 @@ sed -i 's/AcceptEnv/#AcceptEnv/g' /etc/ssh/sshd_config
 apt-get --reinstall --fix-missing install -y bzip2 gzip coreutils wget screen rsyslog iftop htop net-tools zip unzip wget net-tools curl nano sed screen gnupg gnupg1 bc apt-transport-https build-essential dirmngr libxml-parser-perl neofetch git
 echo "clear" >> .profile
 echo "neofetch" >> .profile
-echo "echo by AdiSubagja" >> .profile
+echo "echo by Lurahkudapawana" >> .profile
 
 # install webserver
 apt -y install nginx
@@ -95,13 +95,13 @@ rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
 wget -O /etc/nginx/nginx.conf "https://netzvps.herokuapp.com/vpn/nginx.conf"
 mkdir -p /home/vps/public_html
-echo "<pre>Setup by AdiSubagja</pre>" > /home/vps/public_html/index.html
-wget -O /etc/nginx/conf.d/vps.conf "https://netzvps.herokuapp.com/vpn/vps.conf"
+echo "<pre>Setup by Lurahkudapawana</pre>" > /home/vps/public_html/index.html
+wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/di2nk/testing/main/vps.conf"
 /etc/init.d/nginx restart
 
 # install badvpn
 cd
-wget -O /usr/bin/badvpn-udpgw "https://netzvps.herokuapp.com/vpn/badvpn-udpgw64"
+wget -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/di2nk/testing/main/badvpn-udpgw64"
 chmod +x /usr/bin/badvpn-udpgw
 sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7100 --max-clients 500' /etc/rc.local
 sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200 --max-clients 500' /etc/rc.local
@@ -125,7 +125,7 @@ echo "/usr/sbin/nologin" >> /etc/shells
 # install squid
 cd
 apt -y install squid3
-wget -O /etc/squid/squid.conf "https://netzvps.herokuapp.com/vpn/squid3.conf"
+wget -O /etc/squid/squid.conf "https://raw.githubusercontent.com/di2nk/testing/main/squid3.conf"
 sed -i $MYIP2 /etc/squid/squid.conf
 
 # setting vnstat
@@ -180,7 +180,7 @@ sed -i 's/ENABLED=0/ENABLED=1/g' /etc/default/stunnel4
 /etc/init.d/stunnel4 restart
 
 #OpenVPN
-wget https://netzvps.herokuapp.com/vpn/vpn.sh &&  chmod +x vpn.sh && ./vpn.sh
+wget https://raw.githubusercontent.com/di2nk/testing/main/vpn.sh &&  chmod +x vpn.sh && ./vpn.sh
 
 # install fail2ban
 apt -y install fail2ban
@@ -217,13 +217,13 @@ cd
 apt install -y libxml-parser-perl
 
 # banner /etc/issue.net
-wget -O /etc/issue.net "https://netzvps.herokuapp.com/vpn/bannerssh.conf"
+wget -O /etc/issue.net "https://raw.githubusercontent.com/di2nk/testing/main/bannerssh.conf"
 echo "Banner /etc/issue.net" >>/etc/ssh/sshd_config
 sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/issue.net"@g' /etc/default/dropbear
 
 #install bbr dan optimasi kernel
-wget https://netzvps.herokuapp.com/vpn/bbr.sh && chmod +x bbr.sh && ./bbr.sh
-wget https://netzvps.herokuapp.com/vpn/set-br.sh && chmod +x set-br.sh && ./set-br.sh
+wget https://raw.githubusercontent.com/di2nk/testing/main/bbr.sh && chmod +x bbr.sh && ./bbr.sh
+wget https://raw.githubusercontent.com/di2nk/testing/main/set-br.sh && chmod +x set-br.sh && ./set-br.sh
 
 # blockir torrent
 iptables -A FORWARD -m string --string "get_peers" --algo bm -j DROP
@@ -244,25 +244,25 @@ netfilter-persistent reload
 
 # download script
 cd /usr/bin
-wget -O add-host "https://netzvps.herokuapp.com/vpn/addhost.sh"
-wget -O about "https://netzvps.herokuapp.com/vpn/about.sh"
-wget -O menu "https://netzvps.herokuapp.com/vpn/menu.sh"
-wget -O usernew "https://netzvps.herokuapp.com/vpn/usernew.sh"
-wget -O trial "https://netzvps.herokuapp.com/vpn/trial.sh"
-wget -O hapus "https://netzvps.herokuapp.com/vpn/hapus.sh"
-wget -O member "https://netzvps.herokuapp.com/vpn/member.sh"
-wget -O webmin "https://netzvps.herokuapp.com/vpn/webmin.sh"
-wget -O delete "https://netzvps.herokuapp.com/vpn/delete.sh"
-wget -O cek "https://netzvps.herokuapp.com/vpn/cek.sh"
-wget -O restart "https://netzvps.herokuapp.com/vpn/restart.sh"
-wget -O speedtest "https://netzvps.herokuapp.com/vpn/speedtest_cli.py"
-wget -O info "https://netzvps.herokuapp.com/vpn/info.sh"
-wget -O ram "https://netzvps.herokuapp.com/vpn/ram.sh"
-wget -O renew "https://netzvps.herokuapp.com/vpn/renew.sh"
-wget -O autokill "https://netzvps.herokuapp.com/vpn/autokill.sh"
-wget -O ceklim "https://netzvps.herokuapp.com/vpn/ceklim.sh"
-wget -O tendang "https://netzvps.herokuapp.com/vpn/tendang.sh"
-wget -O clear-log "https://netzvps.herokuapp.com/vpn/clear-log.sh"
+wget -O addhost "https://raw.githubusercontent.com/di2nk/testing/main/addhost.sh"
+wget -O about "https://raw.githubusercontent.com/di2nk/testing/main/about.sh"
+wget -O menu "https://raw.githubusercontent.com/di2nk/testing/main/menu.sh"
+wget -O usernew "https://raw.githubusercontent.com/di2nk/testing/main/usernew.sh"
+wget -O trial "https://raw.githubusercontent.com/di2nk/testing/main/trial.sh"
+wget -O hapus "https://raw.githubusercontent.com/di2nk/testing/main/hapus.sh"
+wget -O member "https://raw.githubusercontent.com/di2nk/testing/main/member.sh"
+wget -O webmin "https://raw.githubusercontent.com/di2nk/testing/main/webmin.sh"
+wget -O delete "https://raw.githubusercontent.com/di2nk/testing/main/delete.sh"
+wget -O cek "https://raw.githubusercontent.com/di2nk/testing/main/cek.sh"
+wget -O restart "https://raw.githubusercontent.com/di2nk/testing/main/restart.sh"
+wget -O speedtest "https://raw.githubusercontent.com/di2nk/testing/main/speedtest_cli.py"
+wget -O info "https://raw.githubusercontent.com/di2nk/testing/main/info.sh"
+wget -O ram "https://raw.githubusercontent.com/di2nk/testing/main/ram.sh"
+wget -O renew "https://raw.githubusercontent.com/di2nk/testing/main/renew.sh"
+wget -O autokill "https://raw.githubusercontent.com/di2nk/testing/main/autokill.sh"
+wget -O ceklim "https://raw.githubusercontent.com/di2nk/testing/main/ceklim.sh"
+wget -O tendang "https://raw.githubusercontent.com/di2nk/testing/main/tendang.sh"
+wget -O clear-log "https://raw.githubusercontent.com/di2nk/testing/main/clear-log.sh"
 
 echo "0 5 * * * root clear-log && reboot" >> /etc/crontab
 
