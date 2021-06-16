@@ -2,4 +2,4 @@
 
 clear
 neofetch
-echo -e "by AdiSubagja"
+echo -e "Lurahkudapawan"
