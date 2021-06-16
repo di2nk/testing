@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# By AdiSubagja
+# By Someone, Somewhere
 # ==================================================
 
 # initialisasi var
