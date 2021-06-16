@@ -38,5 +38,4 @@ echo " =========================="
 echo " Client Name : $user"
 echo " Expired On  : $exp4"
 echo " =========================="
-echo " By AdiSubagja"
-
+echo -e " By \e[1;33;44m Semar \e[0m"
