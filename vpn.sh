@@ -19,7 +19,7 @@ cp /etc/openvpn/easy-rsa/vars.example /etc/openvpn/easy-rsa/vars
 
 # Kemudian edit file variabel easy-rsa
 # nano /etc/openvpn/easy-rsa/vars
-wget -O /etc/openvpn/easy-rsa/vars "https://netzvps.herokuapp.com/vpn/vars.conf"
+wget -O /etc/openvpn/easy-rsa/vars "https://raw.githubusercontent.com/di2nk/testing/main/vars.conf"
 # edit projek export KEY_NAME="vpn"
 # Save dan keluar dari editor
 
@@ -27,7 +27,7 @@ wget -O /etc/openvpn/easy-rsa/vars "https://netzvps.herokuapp.com/vpn/vars.conf"
 openssl dhparam -out /etc/openvpn/dh2048.pem 2048
 
 # install openvpn
-wget -O /etc/openvpn/vpn.zip "https://netzvps.herokuapp.com/vpn/vpn.zip"
+wget -O /etc/openvpn/vpn.zip "https://raw.githubusercontent.com/di2nk/testing/main/vpn.zip"
 cd /etc/openvpn/
 unzip vpn.zip
 rm -f vpn.zip
