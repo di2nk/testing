@@ -39,7 +39,7 @@ echo -e "* speedtest    : Tes kecepatan VPS"
 echo -e "* info         : Informasi"
 echo -e "* about        : Informasi script autossh"
 echo -e ""
-echo -e "================================================================
+echo -e "==============================================================="
 echo -e ""
 echo -e " Script by \e[1;33;44m Horasss \e[0m"
 echo -e " Modified by \e[1;33;44m Semar Badranaya \e[0m"
