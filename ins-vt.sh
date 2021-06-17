@@ -30,7 +30,7 @@ cat> /etc/v2ray/config.json << END
   },
   "inbounds": [
     {
-      "port": 4443,
+      "port": 8443,
       "protocol": "vmess",
       "settings": {
         "clients": [
@@ -215,7 +215,7 @@ cat> /etc/v2ray/vless.json << END
   },
   "inbounds": [
     {
-      "port": 5443,
+      "port": 2096,
       "protocol": "vless",
       "settings": {
         "clients": [
@@ -399,7 +399,7 @@ cat> /etc/v2ray/trojan.json <<END
   },
   "inbounds": [
     {
-      "port": 6443,
+      "port": 2052,
       "protocol": "trojan",
       "settings": {
         "clients": [
@@ -480,14 +480,14 @@ cat> /etc/v2ray/trojan.json <<END
   }
 }
 END
-iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 4443 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 5443 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 6443 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 8443 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 2096 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 2052 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 8880 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 80 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m udp -p udp --dport 4443 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m udp -p udp --dport 5443 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m udp -p udp --dport 6443 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m udp -p udp --dport 8443 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m udp -p udp --dport 2096 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m udp -p udp --dport 2052 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m udp -p udp --dport 8880 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m udp -p udp --dport 80 -j ACCEPT
 iptables-save > /etc/iptables.up.rules
