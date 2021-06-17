@@ -21,17 +21,17 @@ exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 sed -i '/#tls$/a\### '"$user $exp"'\
 },{"password": "'""$uuid""'","email": "'""$user""'"' /etc/v2ray/trojan.json
 systemctl restart v2ray@trojan
-trojanlink="trojan://${uuid}@${domain}:6443"
+trojanlink="trojan://${uuid}@${domain}:2052"
 clear
 echo -e ""
 echo -e "==========-V2RAY/Trojan-=========="
 echo -e "Remarks        : ${user}"
 echo -e "Host/IP        : ${domain}"
-echo -e "port           : 6443"
+echo -e "port           : 2052"
 echo -e "Key            : ${uuid}"
 echo -e "link           : ${trojanlink}"
 echo -e "================================="
 echo -e "Expired On     : $exp"
 echo -e ""
-echo -e "By AdiSubagja"
+echo -e "Semar Badranaya"
 
