@@ -1,5 +1,5 @@
 #!/bin/bash
-#auto install debiain
+#auto install debian/ubuntu
 #created Idtunnel mod by someone
 
 # detail nama perusahaan
